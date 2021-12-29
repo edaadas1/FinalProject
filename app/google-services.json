@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "399988939514",
+    "project_id": "final-project-b1b25",
+    "storage_bucket": "final-project-b1b25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399988939514:android:7d61ae9e10feb30cb18743",
+        "android_client_info": {
+          "package_name": "tr.edu.mu.ceng.mad.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399988939514-1akq612l6kbqhnh8cjc3bkptfpcreivh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAguNi7P9pHAFq_xnNrBQf_Ai9QhMSWhKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399988939514-1akq612l6kbqhnh8cjc3bkptfpcreivh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
