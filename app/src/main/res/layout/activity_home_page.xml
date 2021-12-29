@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomePage">
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="APART"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/apart"
+        app:layout_constraintStart_toStartOf="@+id/apart"
+        app:layout_constraintTop_toBottomOf="@+id/apart" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="FOOD"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/food"
+        app:layout_constraintStart_toStartOf="@+id/food"
+        app:layout_constraintTop_toBottomOf="@+id/food" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="HAIRDRESSER"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/hairdresser"
+        app:layout_constraintStart_toStartOf="@+id/hairdresser"
+        app:layout_constraintTop_toBottomOf="@+id/hairdresser" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="GYM"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/gym"
+        app:layout_constraintStart_toStartOf="@+id/gym"
+        app:layout_constraintTop_toBottomOf="@+id/gym" />
+
+    <ImageView
+        android:id="@+id/rightButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn3"
+        app:srcCompat="@drawable/right2" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/search"
+        app:srcCompat="@mipmap/search_foreground" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="411dp"
+        android:layout_height="188dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        app:srcCompat="@mipmap/location_building_foreground" />
+
+    <ImageView
+        android:id="@+id/apart"
+        android:layout_width="104dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@mipmap/home_foreground" />
+
+    <ImageView
+        android:id="@+id/food"
+        android:layout_width="104dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        app:srcCompat="@mipmap/food_foreground" />
+
+    <ImageView
+        android:id="@+id/hairdresser"
+        android:layout_width="218dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn4"
+        app:srcCompat="@mipmap/hairdresser_foreground" />
+
+    <ImageView
+        android:id="@+id/gym"
+        android:layout_width="104dp"
+        android:layout_height="84dp"
+        android:layout_marginEnd="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@mipmap/gym_foreground" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
