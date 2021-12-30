@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btn_apart"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="APART"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/apart" />
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/btn_food"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="FOOD"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/food" />
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/btn_hairdresser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="HAIRDRESSER"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/hairdresser" />
 
     <Button
-        android:id="@+id/btn4"
+        android:id="@+id/btn_gym"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="GYM"
@@ -66,7 +66,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hairdresser"
         app:srcCompat="@drawable/right2" />
 
     <ImageView
@@ -104,7 +104,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_apart"
         app:srcCompat="@mipmap/food_foreground" />
 
     <ImageView
@@ -114,7 +114,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_gym"
         app:srcCompat="@mipmap/hairdresser_foreground" />
 
     <ImageView

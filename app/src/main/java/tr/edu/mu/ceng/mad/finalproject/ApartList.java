@@ -1,5 +1,8 @@
 package tr.edu.mu.ceng.mad.finalproject;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -14,6 +17,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.textclassifier.TextClassification;
 import android.widget.AdapterView;
@@ -25,14 +29,23 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ApartList extends AppCompatActivity {
 
@@ -50,6 +63,7 @@ public class ApartList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apart_list);
+
 
         aparts.add(new Aparts("Emre Apart","Kötekli, 284. Sk. No:5, 48000 Muğla Merkez/Muğla","0552 467 48 48",R.mipmap.emreapart));
         aparts.add(new Aparts("İdeal Apart","Kötekli Mah. Sıtkı Koçman Vakfı Arkası 278 Sok. No:9","0541 280 82 83 / 0252 223 83 22",R.mipmap.idealapart));

@@ -24,13 +24,16 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        Button btn1 = findViewById(R.id.btn1);
-        btn1.setOnClickListener(new View.OnClickListener() {
+        Button btn_apart = findViewById(R.id.btn_apart);
+        btn_apart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(HomePage.this,ApartList.class);
                 startActivity(intent);
             }
         });
+
+
     }
 }
