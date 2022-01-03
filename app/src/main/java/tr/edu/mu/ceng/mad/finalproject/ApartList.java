@@ -27,8 +27,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -52,18 +50,19 @@ public class ApartList extends AppCompatActivity {
     final List<Aparts> aparts = new ArrayList<>();
     private Object ApartAdapter;
 
-    public static final int PERMISSION_WRITE = 0;
-    String url = "https://lh3.googleusercontent.com/proxy/7lxBtOFchb2lImwV_7X8YDcs8lKvmkuNHj5hZ8FHSfVqHTXUh1gRNAXART3CY-fGpXsOYo-YfZm67bMc8R_zBNi3oql9";
-    ProgressDialog progressDialog;
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    public static final int PERMISSION_WRITE = 0;
+    String url = "https://lh3.googleusercontent.com/proxy/Ug6JJy7IfcPVQfWrh3s5sOdohzTgC63_A58Xf6mdnHQAMTo7wCSO4eUa04_-8b_aaKRg2APjeQT9Skhhpr_1fwJJIoVV";
+    ProgressDialog progressDialog;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apart_list);
 
+        progressDialog = new ProgressDialog(this);
 
         aparts.add(new Aparts("Emre Apart","Kötekli, 284. Sk. No:5, 48000 Muğla Merkez/Muğla","0552 467 48 48",R.mipmap.emreapart));
         aparts.add(new Aparts("İdeal Apart","Kötekli Mah. Sıtkı Koçman Vakfı Arkası 278 Sok. No:9","0541 280 82 83 / 0252 223 83 22",R.mipmap.idealapart));
@@ -72,10 +71,6 @@ public class ApartList extends AppCompatActivity {
         ApartAdapter adapter = new ApartAdapter(aparts,this);
 
         listView.setAdapter(adapter);
-
-        progressDialog = new ProgressDialog(this);
-
-        checkPermission();
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -107,13 +102,12 @@ public class ApartList extends AppCompatActivity {
                     }
                 });
 
+                imageView = findViewById(R.id.apartImage);
                 Button btnDownload = findViewById(R.id.btn_download);
                 btnDownload.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (checkPermission()) {
-                            new Downloading().execute(url);
-                        }
+                        new Downloading().execute(url);
                     }
                 });
 
@@ -121,6 +115,7 @@ public class ApartList extends AppCompatActivity {
         });
 
     }
+
     public class Downloading extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -179,5 +174,4 @@ public class ApartList extends AppCompatActivity {
             //do somethings
         }
     }
-
 }

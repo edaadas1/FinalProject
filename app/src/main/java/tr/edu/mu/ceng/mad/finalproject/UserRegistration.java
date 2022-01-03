@@ -45,30 +45,36 @@ public class UserRegistration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+
                 userInformation.put("user name",userName.getText().toString());
                 userInformation.put("password",password.getText().toString());
 
-                db.collection("users").add(userInformation)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                if(!userInformation.containsValue("")) { //boş değer girilmediği sürece database e eklensin
+                    db.collection("users").add(userInformation)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
 
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG ,"DocumentSnapshot added with ID: " + documentReference.getId());
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(UserRegistration.this, "Fail to send data", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(UserRegistration.this, "Fail to send data", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
 
-                Toast.makeText(UserRegistration.this, "User informations is created.", Toast.LENGTH_SHORT).show();
+                if(userInformation.containsValue("")){
+                    Toast.makeText(UserRegistration.this, "Please fill in all fields.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(UserRegistration.this, "User informations are created.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UserRegistration.this,HomePage.class);
+                    startActivity(intent);
+                }
 
-                // I deleted a document that I don't want anymore.
-                db.collection("users").document("F0t409RVCfLLp1jb1Ez7").delete();
-
-                Intent intent = new Intent(UserRegistration.this,HomePage.class);
-                startActivity(intent);
             }
         });
 
