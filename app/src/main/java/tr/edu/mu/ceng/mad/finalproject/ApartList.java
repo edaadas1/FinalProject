@@ -72,7 +72,6 @@ public class ApartList extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -110,10 +109,8 @@ public class ApartList extends AppCompatActivity {
                         new Downloading().execute(url);
                     }
                 });
-
             }
         });
-
     }
 
     public class Downloading extends AsyncTask<String, Integer, String> {
@@ -171,7 +168,7 @@ public class ApartList extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode==PERMISSION_WRITE && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            //do somethings
+
         }
     }
 }

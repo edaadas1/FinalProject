@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -60,6 +61,7 @@ public class ApartAdapter extends BaseAdapter {
         ImageView apartImage = rowView.findViewById(R.id.apartImage);
 
         apartImage.setImageResource(aparts.get(i).getPicId());
+
 
         return rowView;
     }
