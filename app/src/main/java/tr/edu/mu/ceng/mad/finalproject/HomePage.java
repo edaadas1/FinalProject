@@ -34,6 +34,15 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        Button hakkinda = findViewById(R.id.hakkinda);
+        hakkinda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this,FragmentOrnek.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
